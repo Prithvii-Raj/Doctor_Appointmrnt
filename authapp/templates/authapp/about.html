@@ -1,0 +1,104 @@
+{% load static %}
+
+<section style="width: 100%; padding-top: 64px; padding-bottom: 64px; background-color: white;">
+    <div style="max-width: 1120px; margin: 0 auto; padding-left: 24px; padding-right: 24px;">
+
+        <!-- Title -->
+        <h2 style="font-size: 36px; font-weight: bold; text-align: center; color: #2563eb; margin-bottom: 16px;">
+            About LifeCare Hospital
+        </h2>
+        <p style="text-align: center; color: #6b7280; margin-bottom: 48px; max-width: 640px; margin-left: auto; margin-right: auto;">
+            LifeCare Multispeciality Hospital is dedicated to providing world-class healthcare with
+            cutting-edge medical technologies and highly skilled doctors. Our goal is to deliver
+            compassionate care to every patient with trust and excellence.
+        </p>
+
+        <!-- Two Column Section -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 40px; align-items: center;">
+            
+            <!-- Image -->
+            <div>
+                <img src="{% static 'images/Hospital.jpg' %}" alt="Hospital Building"
+                     style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); width: 100%; height: 350px; object-fit: cover;">
+            </div>
+
+            <!-- Text Section -->
+            <div>
+                <h3 style="font-size: 24px; font-weight: 600; color: #1f2937; margin-bottom: 16px;">Who We Are</h3>
+                <p style="color: #6b7280; line-height: 1.6; margin-bottom: 16px;">
+                    Founded in 2010, LifeCare Hospital has grown to become one of the most trusted
+                    healthcare providers in the region. We offer advanced treatment facilities in
+                    cardiology, orthopedics, neurology, maternity care, emergency medicine, and more.
+                </p>
+                <p style="color: #6b7280; line-height: 1.6;">
+                    With 24/7 emergency support, an ICU-equipped ambulance fleet, and a team
+                    of 150+ certified specialists, we ensure the best medical treatment in a
+                    safe, caring, and innovative environment.
+                </p>
+            </div>
+        </div>
+
+        <!-- Mission & Vision -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; margin-top: 48px;">
+            <!-- Mission -->
+            <div style="background-color: #f9fafb; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-radius: 12px; padding: 24px; text-align: center;">
+                <img src="{% static 'images/Mission.jpg' %}" alt="Mission" style="width: 300px; height: 194px; margin: 0 auto 12px;">
+                <h4 style="font-size: 20px; font-weight: 600; margin-bottom: 8px;">Our Mission</h4>
+                <p style="color: #6b7280;">To provide accessible, affordable, and high-quality healthcare to everyone with care and compassion.</p>
+            </div>
+
+            <!-- Vision -->
+            <div style="background-color: #f9fafb; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-radius: 12px; padding: 24px; text-align: center;">
+                <img src="{% static 'images/Vision.jpg' %}" alt="Vision" style="width: 300px; height: 194px; margin: 0 auto 12px;">
+                <h4 style="font-size: 20px; font-weight: 600; margin-bottom: 8px;">Our Vision</h4>
+                <p style="color: #6b7280;">To be a globally recognized hospital known for medical excellence and patient trust.</p>
+            </div>
+
+            <!-- Values -->
+            <div style="background-color: #f9fafb; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-radius: 12px; padding: 24px; text-align: center;">
+                <img src="{% static 'images/Value.jpg' %}" alt="Values" style="width: 350px; height: 194px; margin: 0 auto 12px;">
+                <h4 style="font-size: 20px; font-weight: 600; margin-bottom: 8px;">Our Values</h4>
+                <p style="color: #6b7280;">Compassion, Innovation, Integrity and Excellence in patient care.</p>
+            </div>
+        </div>
+
+        <!-- Team Section -->
+        <h3 style="font-size: 30px; font-weight: bold; text-align: center; color: #1f2937; margin-top: 64px; margin-bottom: 32px;">
+            Our Expert Doctors
+        </h3>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px;">
+            <!-- Doctor 1 -->
+            <div style="background: white; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-radius: 12px; padding: 24px; text-align: center;">
+                <img src="{% static 'images/Doctor1.jpg' %}" alt="Doctor"
+                     style="width: 96px; height: 96px; object-fit: cover; border-radius: 9999px; margin: 0 auto 16px;">
+                <h4 style="font-size: 20px; font-weight: 600;">Dr. Amit Sharma</h4>
+                <p style="color: #6b7280;">Cardiologist (20+ yrs experience)</p>
+            </div>
+
+            <!-- Doctor 2 -->
+            <div style="background: white; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-radius: 12px; padding: 24px; text-align: center;">
+                <img src="{% static 'images/Doctor1.jpg' %}" alt="Doctor"
+                     style="width: 96px; height: 96px; object-fit: cover; border-radius: 9999px; margin: 0 auto 16px;">
+                <h4 style="font-size: 20px; font-weight: 600;">Dr. Priya Mehta</h4>
+                <p style="color: #6b7280;">Gynecologist & Obstetrician</p>
+            </div>
+
+            <!-- Doctor 3 -->
+            <div style="background: white; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-radius: 12px; padding: 24px; text-align: center;">
+                <img src="{% static 'images/Doctor1.jpg' %}" alt="Doctor"
+                     style="width: 96px; height: 96px; object-fit: cover; border-radius: 9999px; margin: 0 auto 16px;">
+                <h4 style="font-size: 20px; font-weight: 600;">Dr. Rohan Verma</h4>
+                <p style="color: #6b7280;">Orthopedic Surgeon</p>
+            </div>
+        </div>
+
+        <!-- CTA Button -->
+        <div style="text-align: center; margin-top: 48px;">
+            <a href="#book-appointment"
+               style="display: inline-block; background-color: #2563eb; color: white; font-weight: 600; padding: 12px 32px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); font-size: 18px; text-decoration: none;">
+                Book Appointment
+            </a>
+        </div>
+    </div>
+</section>

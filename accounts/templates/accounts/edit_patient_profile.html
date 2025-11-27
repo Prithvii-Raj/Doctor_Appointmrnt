@@ -1,0 +1,101 @@
+{% comment %} <h2>Edit Patient Profile</h2>
+<form method="POST">
+    {% csrf_token %}
+    {{ profile_form.as_p }}
+    <button type="submit">Save Changes</button>
+</form>
+
+<a href="{% url 'patient_dashboard' %}">Back to Dashboard</a> {% endcomment %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Patient Profile</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #f4f6f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 500px;
+      background: #fff;
+      margin: 60px auto;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #007bff;
+      margin-bottom: 25px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    form p {
+      margin-bottom: 15px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    button[type="submit"] {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 15px;
+      margin-top: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    a {
+      display: inline-block;
+      text-decoration: none;
+      color: #007bff;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Edit Patient Profile</h2>
+
+    <form method="POST">
+      {% csrf_token %}
+      {{ profile_form.as_p }}
+      <button type="submit">Save Changes</button>
+    </form>
+
+    <a href="{% url 'patient_dashboard' %}">Back to Dashboard</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+{% load static %}
+
+<style>
+    .hero {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 50px;
+    }
+    .left {
+        width: 50%;
+    }
+    .right {
+        width: 50%;
+        text-align: center;
+    }
+    
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 40px;
+        background: white;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        font-family: Arial, sans-serif;
+    }
+    .navbar-left {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    .navbar .brand {
+        font-size: 24px;
+        font-weight: bold;
+        color: #2563EB;
+        text-decoration: none;
+        cursor: default; /* cursor hata diya */
+    }
+    .navbar-button {
+        background: #ced1d8ff;
+        color: white;
+        padding: 8px 18px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-size: 15px;
+        transition: 0.3s;
+    }
+    .navbar-button:hover {
+        background: #a8b0c8ff;
+    }
+    .navbar ul {
+        display: flex;
+        gap: 30px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .navbar a {
+        text-decoration: none;
+        color: #4B5563;
+        font-weight: 500;
+        transition: 0.3s;
+    }
+    .navbar a:hover {
+        color: #2563EB;
+    }
+</style>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="navbar-left">
+        <span class="brand">MedCare</span>
+        <a href="#" class="navbar-button">Book Appointment</a>
+    </div>
+
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="services">Services</a></li>
+        <li><a href="about">About</a></li>
+        <li><a href="contact">Contact Us</a></li>
+    </ul>
+</nav>
+
+
+<div class="hero">
+    <div class="left">
+        <h1 style="font-size:50px; font-weight:bold;">Visit Doctor <br> Today</h1>
+        <p>Get the best medical care for you and your family</p>
+        <a href="#" style="display:inline-block; margin-top:20px; background:red; padding:10px 20px; color:white; border-radius:8px;">Learn more</a>
+    </div>
+
+    <div class="right">
+        <img src="{% static 'images/Doctor.png' %}" width="450px">
+    </div>
+</div>

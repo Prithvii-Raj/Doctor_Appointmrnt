@@ -1,0 +1,158 @@
+{% comment %} <h3>Appointments</h3>
+<table border="1">
+<tr><th>Patient</th><th>Date</th><th>Time</th><th>Status</th><th>Action</th></tr>
+{% for appt in appointments %}
+<tr>
+  <td>{{ appt.patient.user.username }}</td>
+  <td>{{ appt.date }}</td>
+  <td>{{ appt.time }}</td>
+  <td>{{ appt.status }}</td>
+  <td>
+    {% if appt.status == "Pending" %}
+      <a href="{% url 'confirm_appointment' appt.id %}">Confirm</a>
+    {% endif %}
+  </td>
+</tr>
+{% endfor %}
+</table>
+
+<a href="{% url 'download_patient_list' %}">
+    <button style="background-color:green; color:white;">Download Patient List (CSV)</button>
+</a>
+ {% endcomment %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Appointments</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #f4f6f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      background: #fff;
+      margin: 60px auto;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h3 {
+      text-align: center;
+      color: #007bff;
+      margin-bottom: 25px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+    }
+
+    th, td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #007bff;
+      color: white;
+      text-transform: uppercase;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+    }
+
+    tr:hover {
+      background-color: #f1f9ff;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #007bff;
+      color: white;
+      padding: 8px 14px;
+      border-radius: 5px;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    .btn-download {
+      background-color: #28a745;
+      border: none;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 6px;
+      font-size: 15px;
+      cursor: pointer;
+      display: block;
+      margin: 0 auto;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-download:hover {
+      background-color: #1e7e34;
+    }
+
+    .no-data {
+      text-align: center;
+      color: #777;
+      font-style: italic;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h3>Appointments</h3>
+
+    {% if appointments %}
+      <table>
+        <tr>
+          <th>Patient</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+        {% for appt in appointments %}
+        <tr>
+          <td>{{ appt.patient.user.username }}</td>
+          <td>{{ appt.date }}</td>
+          <td>{{ appt.time }}</td>
+          <td>{{ appt.status }}</td>
+          <td>
+            {% if appt.status == "Pending" %}
+              <a href="{% url 'confirm_appointment' appt.id %}" class="btn">Confirm</a>
+            {% else %}
+              <span style="color: gray;">—</span>
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
+    {% else %}
+      <p class="no-data">No appointments available.</p>
+    {% endif %}
+
+    <a href="{% url 'download_patient_list' %}">
+      <button class="btn-download">Download Patient List (CSV)</button>
+    </a>
+  </div>
+</body>
+</html>

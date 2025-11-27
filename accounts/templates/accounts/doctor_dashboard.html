@@ -1,0 +1,135 @@
+{% comment %} <h2>Doctor Dashboard</h2>
+
+<h3>Profile Information</h3>
+<p><strong>Username:</strong>{{user.username}}</p>
+<p><strong>Email:</strong> {{user.email}}</p>
+<p><strong>Specialization:</strong> {{user.doctorprofile.specialization}}</p>
+<p><strong>Experience:</strong>{{user.doctorprofile.experience}} years</p>
+<a href="{% url 'edit_doctor_profile' %}"><button>Edit profile</button></a>
+
+<hr>
+
+<a href="{% url 'manage_appointments' %}">Manage Appointments</a><br><br>
+<a href="{% url 'logout' %}"><button>Logout</button></a> {% endcomment %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctor Dashboard</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #f4f6f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 700px;
+      background: #fff;
+      margin: 50px auto;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #007bff;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      color: #333;
+      border-bottom: 2px solid #007bff;
+      padding-bottom: 6px;
+    }
+
+    p {
+      font-size: 15px;
+      margin: 8px 0;
+      color: #444;
+    }
+
+    strong {
+      color: #000;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 15px;
+      margin-top: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    a {
+      text-decoration: none;
+      color: #007bff;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .link-buttons {
+      margin-top: 20px;
+    }
+
+    .link-buttons a {
+      display: inline-block;
+      margin: 10px 10px 0 0;
+    }
+
+    hr {
+      margin: 30px 0;
+      border: none;
+      border-top: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Doctor Dashboard</h2>
+
+    <h3>Profile Information</h3>
+    <p><strong>Username:</strong> {{ user.username }}</p>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    <p><strong>Specialization:</strong> {{ user.doctorprofile.specialization }}</p>
+    <p><strong>Experience:</strong> {{ user.doctorprofile.experience }} years</p>
+
+    <a href="{% url 'edit_doctor_profile' %}">
+      <button>Edit Profile</button>
+    </a>
+
+    <hr>
+
+    <div class="link-buttons">
+      <a href="{% url 'manage_appointments' %}">
+        <button style="background-color:#28a745;">Manage Appointments</button>
+      </a>
+
+      <a href="{% url 'logout' %}">
+        <button style="background-color:#dc3545;">Logout</button>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+

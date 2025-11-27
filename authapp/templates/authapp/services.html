@@ -1,0 +1,84 @@
+{% load static %}
+
+<section style="width: 100%; padding-top: 64px; padding-bottom: 64px; background-color: #f9fafb;">
+    <div style="max-width: 1120px; margin: 0 auto; padding-left: 24px; padding-right: 24px;">
+
+        <!-- Title -->
+        <h2 style="font-size: 36px; font-weight: bold; text-align: center; color: #2563eb; margin-bottom: 16px;">
+            Our Services
+        </h2>
+        <p style="text-align: center; color: #6b7280; margin-bottom: 48px;">
+            We provide a wide range of medical services with professional care and advanced facilities.
+        </p>
+
+        <!-- Services Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 32px;">
+
+            <!-- Card -->
+            <div style="background: white; border: 1px solid #e5e7eb; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                        border-radius: 12px; padding: 24px; text-align: center;
+                        transition: all 0.3s ease-in-out;">
+                <img src="{% static 'images/General.jpg' %}" alt="General Checkup"
+                     style="width: 80px; height: 80px; display: block; margin: 0 auto 16px;">
+                <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 8px;">General Checkup</h3>
+                <p style="color: #6b7280;">Complete health evaluation and routine checkup for overall wellness.</p>
+            </div>
+
+            <div style="background: white; border: 1px solid #e5e7eb; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                        border-radius: 12px; padding: 24px; text-align: center;
+                        transition: all 0.3s ease-in-out;">
+                <img src="{% static 'images/Cardiology.jpg' %}" alt="Cardiology"
+                     style="width: 80px; height: 80px; display: block; margin: 0 auto 16px;">
+                <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 8px;">Cardiology</h3>
+                <p style="color: #6b7280;">Expert heart care with advanced diagnosis and treatment methods.</p>
+            </div>
+
+            <div style="background: white; border: 1px solid #e5e7eb; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                        border-radius: 12px; padding: 24px; text-align: center;
+                        transition: all 0.3s ease-in-out;">
+                <img src="{% static 'images/Card.jpg' %}" alt="Surgery"
+                     style="width: 80px; height: 80px; display: block; margin: 0 auto 16px;">
+                <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 8px;">Surgery</h3>
+                <p style="color: #6b7280;">Modern operation theater with highly skilled surgeons & equipment.</p>
+            </div>
+
+            <div style="background: white; border: 1px solid #e5e7eb; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                        border-radius: 12px; padding: 24px; text-align: center;
+                        transition: all 0.3s ease-in-out;">
+                <img src="{% static 'images/Sergery.jpg' %}" alt="Maternity Care"
+                     style="width: 80px; height: 80px; display: block; margin: 0 auto 16px;">
+                <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 8px;">Maternity Care</h3>
+                <p style="color: #6b7280;">Best care for mother and child with experienced gynecologists.</p>
+            </div>
+
+            <div style="background: white; border: 1px solid #e5e7eb; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                        border-radius: 12px; padding: 24px; text-align: center;
+                        transition: all 0.3s ease-in-out;">
+                <img src="{% static 'images/Care.jpg' %}" alt="Emergency"
+                     style="width: 80px; height: 80px; display: block; margin: 0 auto 16px;">
+                <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 8px;">Emergency Services</h3>
+                <p style="color: #6b7280;">24/7 emergency care with ambulance and ICU support.</p>
+            </div>
+
+            <div style="background: white; border: 1px solid #e5e7eb; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                        border-radius: 12px; padding: 24px; text-align: center;
+                        transition: all 0.3s ease-in-out;">
+                <img src="{% static 'images/Emergency.jpg' %}" alt="Diagnostics & Lab"
+                     style="width: 80px; height: 80px; display: block; margin: 0 auto 16px;">
+                <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 8px;">Diagnostics & Lab</h3>
+                <p style="color: #6b7280;">Accurate laboratory and radiology reports using advanced equipment.</p>
+            </div>
+        </div>
+
+        <!-- Button -->
+        <div style="text-align: center; margin-top: 48px;">
+            <a href="#book-appointment"
+               style="display: inline-block; background-color: #2563eb; padding: 12px 32px;
+                      border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+                      font-size: 18px; font-weight: 600; color: white; 
+                      text-decoration: none; transition: all 0.3s ease;">
+                Book Appointment
+            </a>
+        </div>
+    </div>
+</section>

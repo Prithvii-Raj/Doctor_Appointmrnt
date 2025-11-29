@@ -1,20 +1,7 @@
- {% comment %} <h2>Login</h2>
-<form method="POST">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Login</button>
-</form>
-<a href="{% url 'signup' %}">Create a new account</a>  {% endcomment %}
-
+{% extends 'authapp/landing.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
 
-</head>
+{% block content %}
 <link rel="stylesheet" href="{% static 'css/login.css' %}">
 
 <body>
@@ -31,4 +18,4 @@
     <a href="{% url 'Landing' %}">Back</a>
   </div>
 </body>
-</html>
+{% endblock %}

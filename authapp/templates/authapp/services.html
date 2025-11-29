@@ -1,4 +1,4 @@
-{% load static %}
+{% comment %} {% load static %}
 
 <section style="width: 100%; padding-top: 64px; padding-bottom: 64px; background-color: #f9fafb;">
     <div style="max-width: 1120px; margin: 0 auto; padding-left: 24px; padding-right: 24px;">
@@ -81,4 +81,378 @@
             </a>
         </div>
     </div>
-</section>
+</section> {% endcomment %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedCare Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .services-section {
+            width: 100%;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-title {
+            font-size: 48px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.6s ease-out backwards;
+        }
+
+        .service-card:nth-child(1) { animation-delay: 0.1s; }
+        .service-card:nth-child(2) { animation-delay: 0.2s; }
+        .service-card:nth-child(3) { animation-delay: 0.3s; }
+        .service-card:nth-child(4) { animation-delay: 0.4s; }
+        .service-card:nth-child(5) { animation-delay: 0.5s; }
+        .service-card:nth-child(6) { animation-delay: 0.6s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .icon-wrapper {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3);
+        }
+
+        .service-card:hover .icon-wrapper {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 12px 32px rgba(102, 126, 234, 0.5);
+        }
+
+        .icon-wrapper::after {
+            content: '';
+            position: absolute;
+            width: 120%;
+            height: 120%;
+            border: 2px solid rgba(102, 126, 234, 0.3);
+            border-radius: 50%;
+            animation: pulse-ring 2s ease-out infinite;
+        }
+
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(0.8);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.2);
+                opacity: 0;
+            }
+        }
+
+        .icon-wrapper img {
+            width: 50px;
+            height: 50px;
+            filter: brightness(0) invert(1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        .service-description {
+            font-size: 15px;
+            color: #6b7280;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        .cta-container {
+            text-align: center;
+            animation: fadeIn 1s ease-out 0.8s backwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .appointment-btn {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 18px 48px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .appointment-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+
+        .appointment-btn:hover::before {
+            width: 400px;
+            height: 400px;
+        }
+
+        .appointment-btn:hover {
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .appointment-btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .services-section {
+                padding: 60px 0;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+
+            .section-title {
+                font-size: 36px;
+            }
+
+            .section-subtitle {
+                font-size: 16px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .service-card {
+                padding: 30px 20px;
+            }
+
+            .appointment-btn {
+                padding: 16px 36px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="services-section">
+        <div class="container">
+            <!-- Header -->
+            <div class="section-header">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">
+                    Experience comprehensive healthcare solutions tailored to your needs with our expert medical professionals and state-of-the-art facilities
+                </p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="services-grid">
+                <!-- General Checkup -->
+                <div class="service-card">
+                    <div class="icon-wrapper">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext x='32' y='42' text-anchor='middle' font-size='40'%3E🩺%3C/text%3E%3C/svg%3E" alt="General Checkup">
+                    </div>
+                    <h3 class="service-title">General Checkup</h3>
+                    <p class="service-description">Complete health evaluation and routine checkup for overall wellness and preventive care</p>
+                </div>
+
+                <!-- Cardiology -->
+                <div class="service-card">
+                    <div class="icon-wrapper">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext x='32' y='42' text-anchor='middle' font-size='40'%3E❤️%3C/text%3E%3C/svg%3E" alt="Cardiology">
+                    </div>
+                    <h3 class="service-title">Cardiology</h3>
+                    <p class="service-description">Expert heart care with advanced diagnosis and treatment methods for optimal cardiac health</p>
+                </div>
+
+                <!-- Surgery -->
+                <div class="service-card">
+                    <div class="icon-wrapper">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext x='32' y='42' text-anchor='middle' font-size='40'%3E🏥%3C/text%3E%3C/svg%3E" alt="Surgery">
+                    </div>
+                    <h3 class="service-title">Surgery</h3>
+                    <p class="service-description">Modern operation theater with highly skilled surgeons and cutting-edge medical equipment</p>
+                </div>
+
+                <!-- Maternity Care -->
+                <div class="service-card">
+                    <div class="icon-wrapper">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext x='32' y='42' text-anchor='middle' font-size='40'%3E👶%3C/text%3E%3C/svg%3E" alt="Maternity Care">
+                    </div>
+                    <h3 class="service-title">Maternity Care</h3>
+                    <p class="service-description">Best care for mother and child with experienced gynecologists and comprehensive support</p>
+                </div>
+
+                <!-- Emergency Services -->
+                <div class="service-card">
+                    <div class="icon-wrapper">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext x='32' y='42' text-anchor='middle' font-size='40'%3E🚑%3C/text%3E%3C/svg%3E" alt="Emergency">
+                    </div>
+                    <h3 class="service-title">Emergency Services</h3>
+                    <p class="service-description">24/7 emergency care with rapid ambulance response and dedicated ICU support team</p>
+                </div>
+
+                <!-- Diagnostics & Lab -->
+                <div class="service-card">
+                    <div class="icon-wrapper">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext x='32' y='42' text-anchor='middle' font-size='40'%3E🔬%3C/text%3E%3C/svg%3E" alt="Diagnostics">
+                    </div>
+                    <h3 class="service-title">Diagnostics & Lab</h3>
+                    <p class="service-description">Accurate laboratory and radiology reports using advanced equipment and modern technology</p>
+                </div>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="cta-container">
+                <a href="#book-appointment" class="appointment-btn">
+                    <span>Book Appointment</span>
+                </a>
+                <a href="/" class="appointment-btn">
+                    <span class="back-arrow">←</span>
+                    <span>Back to Home</span>
+                </a>
+            </div>
+           
+        </div>
+    </section>
+</body>
+</html>

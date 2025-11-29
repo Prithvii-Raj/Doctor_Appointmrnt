@@ -1,4 +1,4 @@
-{% load static %}
+{% comment %} {% load static %}
 
 <section style="width: 100%; padding-top: 64px; padding-bottom: 64px; background-color: white;">
     <div style="max-width: 1120px; margin: 0 auto; padding-left: 24px; padding-right: 24px;">
@@ -101,4 +101,542 @@
             </a>
         </div>
     </div>
-</section>
+</section> {% endcomment %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About LifeCare Hospital</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: white;
+        }
+
+        .about-section {
+            width: 100%;
+            padding: 100px 0;
+            background: linear-gradient(180deg, #f8f9ff 0%, #ffffff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(102, 126, 234, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header Section */
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-title {
+            font-size: 48px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: #6b7280;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Story Section */
+        .story-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 80px;
+            animation: fadeIn 1s ease-out 0.2s backwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .image-container {
+            position: relative;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            transition: transform 0.5s ease;
+        }
+
+        .image-container:hover {
+            transform: scale(1.03);
+        }
+
+        .image-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.3) 0%, rgba(118, 75, 162, 0.3) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 1;
+        }
+
+        .image-container:hover::before {
+            opacity: 1;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .story-content h3 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 24px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .story-content h3::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+        }
+
+        .story-content p {
+            color: #6b7280;
+            line-height: 1.8;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        /* Mission Vision Values */
+        .mvv-section {
+            margin-bottom: 80px;
+        }
+
+        .mvv-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .mvv-card {
+            background: white;
+            border-radius: 24px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #f0f0f0;
+        }
+
+        .mvv-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .mvv-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .mvv-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.15);
+        }
+
+        .mvv-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3);
+            transition: transform 0.4s ease;
+        }
+
+        .mvv-card:hover .mvv-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .mvv-card h4 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 12px;
+        }
+
+        .mvv-card p {
+            color: #6b7280;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        /* Team Section */
+        .team-section {
+            margin-bottom: 60px;
+        }
+
+        .team-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .team-header h3 {
+            font-size: 40px;
+            font-weight: 800;
+            color: #1f2937;
+            margin-bottom: 16px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .doctor-card {
+            background: white;
+            border-radius: 24px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .doctor-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+            transition: height 0.4s ease;
+        }
+
+        .doctor-card:hover::after {
+            height: 100%;
+        }
+
+        .doctor-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.15);
+        }
+
+        .doctor-image-wrapper {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .doctor-image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .doctor-card:hover .doctor-image-wrapper::before {
+            opacity: 1;
+        }
+
+        .doctor-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid white;
+            transition: transform 0.4s ease;
+        }
+
+        .doctor-card:hover .doctor-image-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .doctor-card h4 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .doctor-card p {
+            color: #6b7280;
+            font-size: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* CTA Section */
+        .cta-container {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .appointment-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 18px 50px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(102, 126, 234, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .appointment-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+
+        .appointment-btn:hover::before {
+            width: 400px;
+            height: 400px;
+        }
+
+        .appointment-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(102, 126, 234, 0.6);
+        }
+
+        .appointment-btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .about-section {
+                padding: 60px 0;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+
+            .section-title {
+                font-size: 36px;
+            }
+
+            .section-subtitle {
+                font-size: 16px;
+            }
+
+            .story-section {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .image-container img {
+                height: 300px;
+            }
+
+            .story-content h3 {
+                font-size: 28px;
+            }
+
+            .mvv-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-header h3 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="about-section">
+        <div class="container">
+            <!-- Header -->
+            <div class="section-header">
+                <h2 class="section-title">About LifeCare Hospital</h2>
+                <p class="section-subtitle">
+                    LifeCare Multispeciality Hospital is dedicated to providing world-class healthcare with cutting-edge medical technologies and highly skilled doctors. Our goal is to deliver compassionate care to every patient with trust and excellence.
+                </p>
+            </div>
+
+            <!-- Story Section -->
+            <div class="story-section">
+                <div class="image-container">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400'%3E%3Crect fill='%23e8eaf6' width='600' height='400'/%3E%3Ctext x='300' y='200' text-anchor='middle' dominant-baseline='middle' font-family='Arial' font-size='80' fill='%23667eea'%3E🏥%3C/text%3E%3C/svg%3E" alt="Hospital Building">
+                </div>
+
+                <div class="story-content">
+                    <h3>Who We Are</h3>
+                    <p>
+                        Founded in 2010, LifeCare Hospital has grown to become one of the most trusted healthcare providers in the region. We offer advanced treatment facilities in cardiology, orthopedics, neurology, maternity care, emergency medicine, and more.
+                    </p>
+                    <p>
+                        With 24/7 emergency support, an ICU-equipped ambulance fleet, and a team of 150+ certified specialists, we ensure the best medical treatment in a safe, caring, and innovative environment.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Mission Vision Values -->
+            <div class="mvv-section">
+                <div class="mvv-grid">
+                    <div class="mvv-card">
+                        <div class="mvv-icon">🎯</div>
+                        <h4>Our Mission</h4>
+                        <p>To provide accessible, affordable, and high-quality healthcare to everyone with care and compassion</p>
+                    </div>
+
+                    <div class="mvv-card">
+                        <div class="mvv-icon">👁️</div>
+                        <h4>Our Vision</h4>
+                        <p>To be a globally recognized hospital known for medical excellence and patient trust</p>
+                    </div>
+
+                    <div class="mvv-card">
+                        <div class="mvv-icon">💎</div>
+                        <h4>Our Values</h4>
+                        <p>Compassion, Innovation, Integrity and Excellence in patient care</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Section -->
+            <div class="team-section">
+                <div class="team-header">
+                    <h3>Our Expert Doctors</h3>
+                </div>
+
+                <div class="team-grid">
+                    <div class="doctor-card">
+                        <div class="doctor-image-wrapper">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Ccircle fill='%23e0e7ff' cx='60' cy='60' r='60'/%3E%3Ctext x='60' y='70' text-anchor='middle' dominant-baseline='middle' font-size='50'%3E👨‍⚕️%3C/text%3E%3C/svg%3E" alt="Dr. Amit Sharma">
+                        </div>
+                        <h4>Dr. Amit Sharma</h4>
+                        <p>Cardiologist (20+ yrs experience)</p>
+                    </div>
+
+                    <div class="doctor-card">
+                        <div class="doctor-image-wrapper">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Ccircle fill='%23e0e7ff' cx='60' cy='60' r='60'/%3E%3Ctext x='60' y='70' text-anchor='middle' dominant-baseline='middle' font-size='50'%3E👩‍⚕️%3C/text%3E%3C/svg%3E" alt="Dr. Priya Mehta">
+                        </div>
+                        <h4>Dr. Priya Mehta</h4>
+                        <p>Gynecologist & Obstetrician</p>
+                    </div>
+
+                    <div class="doctor-card">
+                        <div class="doctor-image-wrapper">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Ccircle fill='%23e0e7ff' cx='60' cy='60' r='60'/%3E%3Ctext x='60' y='70' text-anchor='middle' dominant-baseline='middle' font-size='50'%3E👨‍⚕️%3C/text%3E%3C/svg%3E" alt="Dr. Rohan Verma">
+                        </div>
+                        <h4>Dr. Rohan Verma</h4>
+                        <p>Orthopedic Surgeon</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="cta-container">
+                <a href="#book-appointment" class="appointment-btn">
+                    <span>Book Appointment</span>
+                </a>
+                <a href="/" class="appointment-btn">
+                    <span class="back-arrow">←</span>
+                    <span>Back to Home</span>
+                </a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

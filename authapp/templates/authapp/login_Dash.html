@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedCare</title>
+
+    <link rel="stylesheet" href="{% static 'css/loginDash.css' %}">
+</head><body>
+
+<div class="bg-shape shape1"></div>
+<div class="bg-shape shape2"></div>
+<div class="bg-shape shape3"></div>
+
+<div class="main-container">
+
+    <!-- LEFT SECTION -->
+    <div class="left-section">
+        <h1 class="logo">MedCare</h1>
+
+        <h2 class="title">Express your gratitude</h2>
+
+        <p class="subtitle">Send a warm thank-you to someone who made your day easier</p>
+
+        <div class="quote-box">
+            "A moment of gratitude makes a difference in your attitude"
+        </div>
+    </div>
+
+    <!-- RIGHT SECTION -->
+    <div class="right-section">
+        <h2 class="heading">Get started today</h2>
+
+        <!-- LOGIN BUTTON -->
+        <a href="http://127.0.0.1:8000/login/" class="btn btn-login">
+            <span>Log in →</span>
+        </a>
+
+        <!-- SIGNUP BUTTON -->
+        <a href="http://127.0.0.1:8000/signup/" class="btn btn-signup">
+            <span>Sign up →</span>
+        </a>
+
+        <div class="divider">or</div>
+
+        <!-- GUEST BUTTON -->
+        <a href="/" class="btn btn-guest">
+            <span>← Home</span>
+        </a>
+
+        {% comment %} <p class="terms">
+            By continuing, you agree to our<br>
+            <a href="/">Terms of Service</a> & <a href="/">Privacy Policy</a>
+        </p> {% endcomment %}
+    </div>
+
+</div>
+
+</body>
+</html>

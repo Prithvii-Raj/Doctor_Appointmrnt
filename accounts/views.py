@@ -7,8 +7,6 @@ from django.core.mail import send_mail
 from django.conf import settings
 
 from django.contrib.auth.models import User   # Not required
-# Create your views here.
-
 
 # example views
 from django.contrib.auth.decorators import login_required, user_passes_test
@@ -172,3 +170,33 @@ def download_patient_list(request):
         ])
 
     return response
+
+# Greatings
+from datetime import datetime
+
+@login_required
+@user_passes_test(is_patient)
+def patient_dashboard(request):
+    patient = request.user.patientprofile
+    appointments = Appointment.objects.filter(patient=patient).order_by('-date', '-time')
+    
+    # Get current hour
+    current_hour = datetime.now().hour
+    
+    # Determine greeting
+    if 5 <= current_hour < 12:
+        greeting = "Good Morning"
+    elif 12 <= current_hour < 17:
+        greeting = "Good Afternoon"
+    elif 17 <= current_hour < 21:
+        greeting = "Good Evening"
+    else:
+        greeting = "Good Night"
+
+    context = {
+        'patient': patient,
+        'appointments': appointments,
+        'greeting': greeting
+    }
+    
+    return render(request, 'accounts/patient_dashboard.html', context)

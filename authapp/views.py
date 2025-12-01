@@ -26,6 +26,9 @@ def about(request):
 
 def contact(request):
     return render(request, 'authapp/contact.html')
+
+def loginDash(request):
+    return render(request, 'authapp/login_Dash.html')
 #End here
 
 def signup_view(request):
